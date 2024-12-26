@@ -21,13 +21,35 @@ export default {
             type: 'string',
             title: 'Attribution',
           },
+          // Adding more fields:
           {
-            name: 'description',
+            name: 'altText',
             type: 'string',
-            title: 'Description',
+            title: 'Alt Text', // Useful for accessibility and SEO
           },
+          {
+            name: 'imageDescription',
+            type: 'text',
+            title: 'Image Description', // Provide a detailed description of the image
+          },
+          {
+            name: 'imageCategory',
+            type: 'string',
+            title: 'Image Category', // Categorize the image (e.g., nature, technology)
+          },
+          {
+            name: 'order',
+            type: 'number',
+            title: 'Order', // Specify the order of images if you plan to display them in a sequence
+          },
+          {
+            name: 'isFeatured',
+            type: 'boolean',
+            title: 'Is Featured?', // A boolean field to mark if the image is a featured one
+          }
         ],
-      },
+      }
+      ,
       {
         title: 'Name',
         name: 'name',
