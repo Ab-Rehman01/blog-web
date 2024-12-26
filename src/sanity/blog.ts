@@ -1,4 +1,4 @@
-// sanity/pet.ts
+// sanity/blog.ts
 export default {
     name: 'blog',
     type: 'document',
@@ -6,6 +6,11 @@ export default {
     fields: [
         {
             name: 'name',
+            type: 'string',
+            title: 'Name'
+        },
+        {
+            name: 'subheading',
             type: 'string',
             title: 'Name'
         }
