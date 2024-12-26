@@ -1,11 +1,19 @@
-import { createClient } from 'next-sanity';
+import { createClient } from '@sanity/client';
 
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!, // Access directly from .env.local
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,     // Ensure these variables are defined
-  apiVersion: '2023-01-01',                             // Use the required API version
-  useCdn: true,                                         // Set to false for fresh data in real-time
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Sanity project ID
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,     // Sanity dataset
+  useCdn: process.env.NODE_ENV === 'production',       // Use CDN for production
 });
+
+// import { createClient } from 'next-sanity';
+
+// export const client = createClient({
+//   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!, // Access directly from .env.local
+//   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,     // Ensure these variables are defined
+//   apiVersion: '2023-01-01',                             // Use the required API version
+//   useCdn: true,                                         // Set to false for fresh data in real-time
+// });
 
 
 
