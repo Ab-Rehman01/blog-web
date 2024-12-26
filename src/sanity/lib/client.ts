@@ -1,10 +1,20 @@
+// import { createClient } from '@sanity/client';
+
+// export const client = createClient({
+//   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Sanity project ID
+//   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,     // Sanity dataset
+//   useCdn: process.env.NODE_ENV === 'production',       // Use CDN for production
+// });
+
 import { createClient } from '@sanity/client';
 
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Sanity project ID
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,     // Sanity dataset
-  useCdn: process.env.NODE_ENV === 'production',       // Use CDN for production
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION, // Add the API version
+  useCdn: true, // You can set this to `false` if you want fresh data every time
 });
+
 
 // import { createClient } from 'next-sanity';
 
