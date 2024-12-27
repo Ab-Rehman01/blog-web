@@ -34,6 +34,7 @@
 
 // src/app/page.tsx
 import { client } from '@/sanity/lib/client';
+import Image from 'next/image';
 
 interface Iblog {
   name: string;
@@ -87,9 +88,11 @@ const Home = async () => {
                     {/* Display image if available */}
                     {data.poster?.asset?.url && (
                       <div className="mb-4">
-                        <img
+                        <Image
                           src={data.poster.asset.url}
                           alt={data.poster.altText || 'Blog Image'}
+                          width={600}  // Adjust the width as needed
+                          height={300} // Adjust the height as needed
                           className="w-full h-48 object-cover mb-4"
                         />
                         {data.poster.caption && (
@@ -136,7 +139,6 @@ const Home = async () => {
 
 // Ensure you are default exporting the component
 export default Home;
-
 
 
 
